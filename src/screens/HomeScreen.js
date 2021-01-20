@@ -1,39 +1,25 @@
 import React, { useState } from "react";
 import { Text, View, StyleSheet } from "react-native";
 import SearchBar from '../components/SearchBar';
-import yelp from "../api/yelp";
+import ResultsList from '../components/ResultsList';
+import useResults from '../hooks/useResults';
 
 const HomeScreen = () => {
 
   const [searchTerm, setSearchTerm] = useState('');
-  const [results, setResults] = useState([]);
-  const [errorMessage, setErrorMessage] = useState('');
-
-  const callYelpApi = async (term) => {
-    try {
-      const response = await yelp.get('/search', {
-        params: {
-          limit: 50,
-          term: term,
-          location: 'seattle'
-        }
-      });
-      setResults(response.data.businesses);
-    }
-    catch (e){
-      setErrorMessage('Something went wrong');
-    }
-  }
-
+  const [callYelpApi, results, errorMessage] = useResults();
   return (
     <View style={styles.background}>
       <SearchBar 
         term={searchTerm} 
         onTermChange={()=>setSearchTerm(term)}
-        onSubmit = {callYelpApi}
+        onSubmit = {() => callYelpApi(searchTerm)}
       />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
       <Text>Results: {results.length}</Text>
+      <ResultsList title="$"/>
+      <ResultsList title="$$"/>
+      <ResultsList title="$$"/>
     </View>
   );
 };
