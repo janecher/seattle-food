@@ -8,7 +8,7 @@
 
 React Native application for searching the food places in Seattle (using Yelp API).
 
-<img src="first.png"/><br>
+<img src="first.png" width='200'/><br>
 
 ## Setup/Installation Requirements
 
@@ -17,7 +17,7 @@ React Native application for searching the food places in Seattle (using Yelp AP
 * Do "npm install", then "npm start" in the terminal.
 * Run the app on your phone by QR code in the terminal.
 
-<img src="second.png"/><br>
+<img src="second.png" width='200'/><br>
 
 ## Known Bugs
 
