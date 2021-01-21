@@ -22,9 +22,9 @@ const HomeScreen = () => {
       />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
       <ScrollView>
-        <ResultsList title="$" resultsList = {filterResultsByPrice('$')}/>
-        <ResultsList title="$$" resultsList = {filterResultsByPrice('$$')}/>
-        <ResultsList title="$$$" resultsList = {filterResultsByPrice('$$$')}/>
+        <ResultsList title="$" resultsList = {filterResultsByPrice('$')} />
+        <ResultsList title="$$" resultsList = {filterResultsByPrice('$$')} />
+        <ResultsList title="$$$" resultsList = {filterResultsByPrice('$$$')} />
       </ScrollView>
     </View>
   );
