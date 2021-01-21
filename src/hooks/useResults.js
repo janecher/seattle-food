@@ -21,7 +21,7 @@ export default () => {
       }
     }
   
-    useEffect(() => {callYelpApi('sushi')}, []);
+    useEffect(() => {callYelpApi('seafood')}, []);
 
     return [callYelpApi, results, errorMessage];
 };
